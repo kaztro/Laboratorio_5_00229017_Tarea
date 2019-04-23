@@ -10,11 +10,14 @@ import java.util.*
 class NetworkUtils {
 
     val POKEMONS_API_BASEURL = "https://pokeapi.co/api/v2/"
+    val POKEMON_INFO = "pokemon"
+    val POKEMON_TYPE = "type"
 
-    fun buildtSearchUrl(pokeName: String) : URL {
+    fun buildtSearchUrl(root: String, pokeID: String) : URL {
         val builtUri = Uri.parse(POKEMONS_API_BASEURL)
             .buildUpon()
-            .appendQueryParameter("t",pokeName)
+            .appendPath(root)
+            .appendPath(pokeID)
             .build()
         return try{ URL(builtUri.toString()) }
                catch (e : MalformedURLException) { URL("") }
