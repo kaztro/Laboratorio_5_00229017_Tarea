@@ -1,7 +1,8 @@
-package com.example.pokeapiapp
+package com.example.pokeapiapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pokeapiapp.R
 
 class MainActivity : AppCompatActivity() {
 
