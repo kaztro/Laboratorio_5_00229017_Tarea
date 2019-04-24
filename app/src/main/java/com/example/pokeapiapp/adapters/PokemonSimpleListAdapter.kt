@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeapiapp.MyPokemonAdapter
 import com.example.pokeapiapp.R
 import com.example.pokeapiapp.pojos.Pokemon
+import kotlinx.android.synthetic.main.list_item_pokemon.view.*
 
 class PokemonSimpleListAdapter(var pokemones: List<Pokemon>, val clickListener: (Pokemon)->Unit) : RecyclerView.Adapter<PokemonSimpleListAdapter.ViewHolder>(), MyPokemonAdapter {
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
@@ -25,10 +26,10 @@ class PokemonSimpleListAdapter(var pokemones: List<Pokemon>, val clickListener: 
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(pokemon: Pokemon, clickListener: (Pokemon) -> Unit) = with(itemView){
-            title_list_item.text = movie.Title
-            genre_list_item.text = movie.Genre
-            runtime_list_item.text = movie.Runtime
-            this.setOnClickListener { clickListener(movie) }
+            name_list_item.text = pokemon.name
+            fsttype_list_item.text = pokemon.fsttype
+            sndtype_list_item.text = pokemon.sndtype
+            this.setOnClickListener { clickListener(pokemon) }
         }
     }
 }
